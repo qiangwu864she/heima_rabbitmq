@@ -59,7 +59,7 @@ public class SpringAmpqTest {
         //准备交换机名称
         String exchangeName = "itcast.topic";
         //消息
-        String message =  "众所周知，日本是一个岛国,这是一个添加测试！";
+        String message =  "众所周知，日本是一个岛国！";
         //发送消息
         rabbitTemplate.convertAndSend(exchangeName,"japan.news",message);
     }
