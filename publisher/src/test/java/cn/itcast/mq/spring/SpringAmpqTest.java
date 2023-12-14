@@ -16,10 +16,11 @@ public class SpringAmpqTest {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
+    //做这个测试的时候注意要首先有一个名称为“simple.queue”的队列，否则发送的消息是没有队列接收的，已经在这个上面出错两次了，大兄弟！
     @Test
     public void testSendMessage2SimpleQueue(){
         String queueName = "simple.queue";
-        String message =  "Hello,wuqiang queue amqp!";
+        String message =  "Hello,wuqiang queue today is 12/14 22:21!";
         rabbitTemplate.convertAndSend(queueName,message);
     }
 
