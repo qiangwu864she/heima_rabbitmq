@@ -58,7 +58,7 @@ public class SpringAmpqTest {
 
     @Test
     public void testSendTopicExchange(){
-        //准备交换机名称
+        //准备交换机名称itcast.
         String exchangeName = "itcast.topic";
         //消息
         String message =  "众所周知，日本又瞎蹦跶了！";
