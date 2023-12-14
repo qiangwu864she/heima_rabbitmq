@@ -12,6 +12,7 @@ public class PublisherApplication {
         SpringApplication.run(PublisherApplication.class);
     }
 
+    //利用Spring Bean的自动装配功能，当声明成Bean时会覆盖java默认的转换器
     @Bean
     public MessageConverter messageConverter(){
         return new Jackson2JsonMessageConverter();

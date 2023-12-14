@@ -3,7 +3,7 @@ logging:
     dateformat: MM-dd HH:mm:ss:SSS
 spring:
   rabbitmq:
-    host: 139.159.178.41
+    host: 110.41.163.26
     port: 5672
     virtual-host: /
     username: itcast

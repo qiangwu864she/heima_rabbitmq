@@ -24,6 +24,7 @@ public class SpringAmpqTest {
         rabbitTemplate.convertAndSend(queueName,message);
     }
 
+    //注意：如果希望在消息队列的console上看到消息，需要将消费者的监听器停止监听，否则消息就直接消费，然后就看不到了  2023.12.14
     @Test
     public void testSendMessage2WorkQueue() throws InterruptedException {
         String queueName = "simple.queue";
@@ -50,9 +51,9 @@ public class SpringAmpqTest {
         //准备交换机名称
         String exchangeName = "itcast.direct";
         //消息
-        String message =  "Hello,yellow";
+        String message =  "Hello,red";
         //发送消息
-        rabbitTemplate.convertAndSend(exchangeName,"yellow",message);
+        rabbitTemplate.convertAndSend(exchangeName,"red",message);
     }
 
     @Test
@@ -60,7 +61,7 @@ public class SpringAmpqTest {
         //准备交换机名称
         String exchangeName = "itcast.topic";
         //消息
-        String message =  "众所周知，日本是一个岛国！";
+        String message =  "众所周知，日本又瞎蹦跶了！";
         //发送消息
         rabbitTemplate.convertAndSend(exchangeName,"japan.news",message);
     }
